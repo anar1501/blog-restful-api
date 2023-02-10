@@ -1,6 +1,7 @@
 package com.company.blogapi.mapper;
 
 import com.company.blogapi.dto.request.RegisterRequestDto;
+import com.company.blogapi.dto.response.UserResponseDto;
 import com.company.blogapi.model.User;
 import com.company.blogapi.repository.RoleRepository;
 import org.mapstruct.*;
@@ -40,4 +41,5 @@ public abstract class UserMapper {
     void map(@MappingTarget User user){
         user.setRoles(Collections.singleton(roleRepository.findByName(ROLE_USER.getRoleName()).get()));
     }
+
 }
