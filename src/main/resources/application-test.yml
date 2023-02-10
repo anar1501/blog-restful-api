@@ -1,0 +1,38 @@
+blog:
+    datasource:
+        username: username
+        password: password
+        url: jdbc:postgresql://localhost:3306/blog_api
+    hibernate:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        format_sql: true
+        ddl-auto: update
+
+server:
+    port: 8081
+
+logging:
+    level:
+        org:
+            hibernate:
+                type:
+                    descriptor:
+                        sql: trace
+spring:
+    jpa:
+        open-in-view: false
+    application:
+      name: blog-api
+
+##jwt
+app:
+    jwt-secret: JWTSecretKey
+    jwt-expiration-milliseconds: 604800000
+
+
+##something
+my:
+    message:
+        body: "Please confirm your registration url: "
+        subject: "Registration Confirm Link"
